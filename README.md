@@ -89,9 +89,9 @@ Open your terminal in VS Code inside the folder containing:
 
 # ORIGINAL SOURCE CITATION AND ACKNOWLEDGMENT:
 
-This project extends and builds upon the open-source Wordle solver by Josh Stephenson:
-Stephenson, Josh. wordle-solver (GitHub Repository).
-Available at: https://github.com/joshstephenson/Wordle-Solver
+This project extends and builds upon the open-source Wordle solver by Josh Stephenson:  
+Stephenson, Josh. wordle-solver (GitHub Repository).  
+Available at: https://github.com/joshstephenson/Wordle-Solver  
 Accessed: December 2025.
 
 My groupmembers and I do not claim authorship of the underlying solver logic All such components remain the intellectual work of the original author.
