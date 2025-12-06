@@ -1,0 +1,81 @@
+1: 1
+2: 60
+3: 878
+4: 1137
+5: 227
+6: 12
+
+Further notes of our own:
+-This is the results of running the original, given repo, that we are extending- given the starting point as 'SLATE'. 
+-Our own build should reporduce the same if not ~equivalent result.
+-After computing the letter-position frequency across the 2315 answer words, SLATE was scored and ranked 
+as the most optimal word where the average guess to a solution was 3.6760. Its empiraclly strong starting word.
+-It is slightly better than average, basically chosen to minimize the mean. But can be argued as not the "best" just like any other 
+starting word. We are sticking with it for simplicity. 
+
+Later we plan to implement: "Compared to the original's (given repo) SLATE - based solver, our Bayesian/Hueristic/State-Search did ___ "
+
+Explaining the above distribution: 
+1 word was solved in 1 guess (the answer itself SLATE)
+60 words solved in exactly 2 guesses
+878 words solved in 3 guesses
+1137 words solved in 4 guesses
+227 words solved in 5 guesses
+12 words solved in 6 guesses
+Total: 1 + 60 + 878 + 1137 + 227 + 12 = 2315 (full answer list).
+-We will further extend this with our own. 
+
+UNDERSTANDING THE GIVEN REPO ------------------------------------------------------------
+The given repo's strategy roughly:
+-state:set of candidate answer words consistent with all feedback so far.
+-Action:choose the next guess word.
+-Transition: apply Wordle feedback (green/yellow/gray), prune the candidate list, update letter feedback.
+-Goal: reach a state where the guessed word = target.
+
+1. Heuristics the baseline uses:
+-Letter-frequency scoring (position-based)
+-Over all answer words, compute how often each letter appears in each position.
+-Score a word by summing its letters’ positional frequencies (deduplicating duplicates).
+-Sorts answers and guesses by this score. higher is “more informative”.
+
+2. Greedy heuristic guess
+-After pruning the candidate answers using current feedback:
+    - If there are more than 50 remaining answers:
+        -ELSE Just pick the highest-scoring remaining answer (by letter frequency) as the next guess.
+
+3. "Intersecting guess"
+If there are 2–49 remaining answers, and use_intersecting_guesses is enabled:
+-Looks at all remaining answers.
+-Builds a set of “important letters” that distinguish them.
+-Choose a guess (not necessarily an answer) that covers as many of those important letters as possible, weighted by how often they appear.
+Seems to be a hand-crafted information gain heuristic.
+
+4. End
+When 1–2 answers are left:
+-Just guess the best (highest-scoring) answer(s).
+
+What it doesn’t do and what we plan to implement on our own to demonstrate what we have learned in class:
+-No A* (no f(n) = g(n) + h(n), no path search tree)
+-No explicity hueristic (entropy is what we are leaning towards/expected remaining guesses)
+-No explicit Bayesian probabilities over candidate words (just sets, not distributions)
+-No explicit optimization / parameter tuning beyond the author’s manual trial-and-error and scoring (thinking about ommiting)
+
+It is just a deterministic heuristic-search agent over the candidate-set state space, using letter frequency and 
+intersecting guesses as its heuristics, not framed in terms of A* or Bayesian updating
+
+How we extend it/our contribution:
+-Make the state-space + belief-state modeling explicit
+-Move from implicit heuristics (frequency & intersecting) to:
+    -Explicit heuristics (entropy, expected remaining guesses).
+    -Explicit probabilistic reasoning (Bayesian updates).
+-Maybe some optimization (even simple: comparing strategies or tuning 1–2 weights via simulation) to show AI/optimization terms.
+
+Essentially:
+Our project treats Wordle as a belief-state search problem.
+We formalize each step using the state-space model from class, where the state is the remaining candidate set, actions are guesses, and transitions are deterministic updates based on feedback.
+We move beyond/extend the original solver’s implicit heuristics by implementing explicit informed-search heuristics (entropy, expected candidate reduction, A*-ish scoring) and explicit probabilistic reasoning via Bayesian updates over candidate words.
+This gives us an AI agent capable of balancing exploration and exploitation, reducing uncertainty systematically, and solving Wordle using search, heuristics, and Bayesian reasoning as lectured in class.
+
+Note to self-
+tiers of guesses from nyt:
+Genius, Magnificent, Impressive, Splendid, Great, Phew
