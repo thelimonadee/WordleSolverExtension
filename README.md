@@ -12,7 +12,10 @@ Below are the commands you can run in VS Code or any terminal inside the project
 
 ## 1. Autonomous Simulation Mode:
 Runs the AI agent automatically on many target words (similar to the original repo’s wordle_runner.py) and outputs:
-per-game results, overall stats (mean guesses, distribution), a TXT summary, a PNG bar chart, a CSV results file (for statistic/Colab analysis)
+* per-game results,
+* overall stats (mean guesses, distribution),
+* a TXT summary, a PNG bar chart,
+* a CSV results file (for statistic/Colab analysis)
 
 commands:
 
