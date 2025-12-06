@@ -2,7 +2,7 @@
 For CPSC481 AI Project
 *** Instructions on how to run these files for now ****
 
-Running our Wordle AI System:
+# Running our Wordle AI System:
 
 This project extends the original Wordle solver (cited down below) with a modular AI strategy layer (Baseline, Entropy, Bayesian, A*) and provides two ways to use the system:
 1. Autonomous Simulation Mode (run many games, compute averages, export results)
@@ -10,7 +10,7 @@ This project extends the original Wordle solver (cited down below) with a modula
 
 Below are the commands you can run in VS Code or any terminal inside the project directory.
 
-1. Autonomous Simulation Mode:
+## 1. Autonomous Simulation Mode:
 Runs the AI agent automatically on many target words (similar to the original repo’s wordle_runner.py) and outputs:
 per-game results, overall stats (mean guesses, distribution), a TXT summary, a PNG bar chart, a CSV results file (for statistic/Colab analysis)
 
@@ -36,7 +36,7 @@ python experiment_runner.py --strategy bayes --num-games 200
 Run ALL 2315 NYT answers
 python experiment_runner.py --strategy astar --csv
 
-2. Interactive Tutor Mode
+## 2. Interactive Tutor Mode
 Lets you play Wordle (on NYT website, phone, or wherever (5 letters)) while the AI:
 -tracks remaining candidates
 -suggests the optimal next guess
@@ -55,7 +55,7 @@ python tutorCli.py --strategy entropy --starting-word CRANE
 
 After running, follow the guided instructions and play 'guided' by the AI/strategy.
 
-WHERE TO RUN THESE COMMANDS
+## WHERE TO RUN THESE COMMANDS
 Open your terminal in VS Code inside the folder containing:
 experiment_runner.py
 tutor_cli.py
