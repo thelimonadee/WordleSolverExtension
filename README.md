@@ -1,5 +1,5 @@
 # WordleSolverExtension
-For CPSC481 AI Project
+For CPSC481 AI Project  
 *** Instructions on how to run these files for now ****
 
 # Running our Wordle AI System:
