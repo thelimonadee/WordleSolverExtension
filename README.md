@@ -11,7 +11,7 @@ This project extends the original Wordle solver (cited down below) with a modula
 Below are the commands you can run in VS Code or any terminal inside the project directory.
 
 ## 1. Autonomous Simulation Mode:
-Runs the AI agent automatically on many target words (similar to the original repo’s wordle_runner.py) and outputs:
+Runs the AI agent automatically on many target words (nyt list of words, similar to the original repo’s wordle_runner.py) and outputs:
 * per-game results,
 * overall stats (mean guesses, distribution),
 * a TXT summary, a PNG bar chart,
@@ -20,16 +20,16 @@ Runs the AI agent automatically on many target words (similar to the original re
 commands:
 
 ```
-python experiment_runner.py --strategy baseline --starting-word SLATE
+python experiment_runner.py --strategy baseline --starting-word SLATE --csv
 ```
 ```
-python experiment_runner.py --strategy entropy --starting-word SLATE
+python experiment_runner.py --strategy entropy --starting-word SLATE --csv
 ```
 ```
-python experiment_runner.py --strategy bayes    --starting-word SLATE 
+python experiment_runner.py --strategy bayes --starting-word SLATE --csv
 ```
 ```
-python experiment_runner.py --strategy astar    --starting-word SLATE 
+python experiment_runner.py --strategy astar --starting-word SLATE --csv
 ```
 
 Strategy Desc:
