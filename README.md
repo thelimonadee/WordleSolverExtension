@@ -96,14 +96,14 @@ Accessed: December 2025.
 
 My groupmembers and I do not claim authorship of the underlying solver logic All such components remain the intellectual work of the original author.
 
-Our contribution consists of an AI Strategy Layer built on top of the existing solver, including:
--A modular Strategy interface
--BaselineFrequencyStrategy wrapper
--EntropyHeuristicStrategy (informed search)
--BayesianBeliefStrategy (belief-state + Bayes updates)
--AStarEvaluationStrategy (A*-style evaluation)
--Experiment runner with our own automated analysis (TXT/CSV/PNG outputs)
--Our own Interactive tutor CLI using pluggable strategies
+Our contribution consists of an AI Strategy Layer built on top of the existing solver, including:  
+* A modular Strategy interface
+* BaselineFrequencyStrategy wrapper
+* EntropyHeuristicStrategy (informed search)
+* BayesianBeliefStrategy (belief-state + Bayes updates)
+* AStarEvaluationStrategy (A*-style evaluation)
+* Experiment runner with our own automated analysis (TXT/CSV/PNG outputs)
+* Our own Interactive tutor CLI using pluggable strategies
 
 This extension is intended for academic use as part of a university AI course project.
 
@@ -113,6 +113,6 @@ We extend the open-source Wordle solver by Stephenson (2022), available at https
 
 OR for the reference page: 
 
-Stephenson, J. (2022). *Wordle-Solver* [Source code]. GitHub.
+Stephenson, J. (2022). *Wordle-Solver* [Source code]. GitHub.  
 https://github.com/joshstephenson/Wordle-Solver )
 
