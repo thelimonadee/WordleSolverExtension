@@ -86,6 +86,31 @@ Open your terminal in VS Code inside the folder containing:
 * wordle_agent.py
 * wordle_solver.py
 
+# 3). Running the GUI (AI Tutor and Autonomous solver agent)  
+Included within this project are 2 graphical interfaces built on top of the AI strategies implemented (baseline (extension of open-source repo), entropy huersitic, bayes, astar). This GUI wraps around the engine aforementioned above, strategies.py, and visualizes tutorCli.py form the CLI to GUI. 
+
+### A). Wordle AI Tutor  
+This opens a desktop window where you manually enter the GREEN pattern, YELLOW letters, and whether the guess solved the puzzle.  
+The AI maintains the candidate set and recommends the next move mirroring tutorCli.py but in a graphical interface.  
+To run the tutor mode:  
+1. Open navigate to project folder then navigate to main.py
+2. Uncomment: runApp() and ensure autonomous solver line is commented: # runGame()
+3. In the terminal:
+```
+python main.py
+```
+You should now see the Wordle AI Tutor window which should be familiar from tutorCli.py.  
+### B). Autonomous AI Agent solver  
+This GUI lets the agent solve a chosen target word automatically with no manual  user feedback needed.
+It uses the same strategies as the simulation code but presents the run visually, step by step, with remaining candidate counts.    
+1. Open navigate to project folder then navigate to main.py  
+2. Uncomment: runGame() and ensure AI tutor line is commented: # runApp()  
+3. In the terminal:  
+```
+python main.py
+```
+You will then see the Auto solver window where you type a 5 letter target word and select a strategy. 
+
 
 # ORIGINAL SOURCE CITATION AND ACKNOWLEDGMENT:
 
