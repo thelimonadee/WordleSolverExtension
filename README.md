@@ -94,7 +94,7 @@ This opens a desktop window where you manually enter the GREEN pattern, YELLOW l
 The AI maintains the candidate set and recommends the next move mirroring tutorCli.py but in a graphical interface.  
 To run the tutor mode:  
 1. Open navigate to project folder then navigate to main.py
-2. Uncomment: runApp() and ensure autonomous solver line is commented: # runGame()
+2. Uncomment: **runApp()** and ensure autonomous solver line is commented: **# runGame()**  
 3. In the terminal:
 ```
 python main.py
@@ -104,7 +104,7 @@ You should now see the Wordle AI Tutor window which should be familiar from tuto
 This GUI lets the agent solve a chosen target word automatically with no manual  user feedback needed.
 It uses the same strategies as the simulation code but presents the run visually, step by step, with remaining candidate counts.    
 1. Open navigate to project folder then navigate to main.py  
-2. Uncomment: runGame() and ensure AI tutor line is commented: # runApp()  
+2. Uncomment: **runGame()** and ensure AI tutor line is commented: **# runApp()**    
 3. In the terminal:  
 ```
 python main.py
