@@ -32,7 +32,7 @@ python experiment_runner.py --strategy bayes --starting-word SLATE --csv
 python experiment_runner.py --strategy astar --starting-word SLATE --csv
 ```
 
-Strategy Desc:
+Strategy Description Recap:
 * baseline- Original solver behavior (letter frequency + intersecting). Comparisons sake
 * entropy- Informed search maximizing expected information gain
 * bayes- Bayesian belief-state update + MAP selection
