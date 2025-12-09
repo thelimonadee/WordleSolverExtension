@@ -61,7 +61,7 @@ Solve the hidden Wordle word in the fewest expected guesses, lowest guess averag
 ### Why Entropy as our default strategy?  
 Entropy scoring partitions the belief state by feedback pattern and chooses the guess that maximizes expected information gain, yielding highly efficient reductions.  
 <img width="960" height="540" alt="readme2" src="https://github.com/user-attachments/assets/97b968de-da0d-46c8-a68d-21a2e3e8f518" />  
-###Google Colab recording our data: https://colab.research.google.com/drive/1pDSBOovB33FkzocuhYK-KggyTFtu7Uwa?usp=sharing#scrollTo=fLx9wfgwl0aC
+### Google Colab recording our data: https://colab.research.google.com/drive/1pDSBOovB33FkzocuhYK-KggyTFtu7Uwa?usp=sharing#scrollTo=fLx9wfgwl0aC
 
 # Example output (of simulation)   
 ```
