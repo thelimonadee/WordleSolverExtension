@@ -60,15 +60,19 @@ Inspired by baseline/open-source repo
 Solve the hidden Wordle word in the fewest expected guesses, lowest guess average.    
 ### Why Entropy as our default strategy?  
 Entropy scoring partitions the belief state by feedback pattern and chooses the guess that maximizes expected information gain, yielding highly efficient reductions.  
+<img width="960" height="540" alt="readme2" src="https://github.com/user-attachments/assets/97b968de-da0d-46c8-a68d-21a2e3e8f518" />  
+###Google Colab recording our data: https://colab.research.google.com/drive/1pDSBOovB33FkzocuhYK-KggyTFtu7Uwa?usp=sharing#scrollTo=fLx9wfgwl0aC
 
 # Example output (of simulation)   
 ```
 Strategy: entropy
-Mean guesses: 3.62
-Solved within 4 guesses: 93%
+Mean guesses: 3.5401
+Solved within 4 guesses: 90.45%
 Failures ( >6 guesses ): 8 / 2315
 ```
 # Findings:  
+<img width="960" height="540" alt="readme1" src="https://github.com/user-attachments/assets/effbc19d-e541-494f-8520-8551e1943e31" />  
+
 * Entropy heuristic produced the lowest average guess count.  
 * Bayesian and A* methods showed stable, consistent reasoning from belief states.    
 * Baseline frequency heuristic performed well but was outperformed in deep uncertainty cases. Still a safe option, but we believe our heuristic is more efficient.     
