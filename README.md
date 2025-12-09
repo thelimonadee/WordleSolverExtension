@@ -1,7 +1,79 @@
 # WordleSolverExtension
 For CPSC481 AI Project  
-*** Instructions on how to run these files for now ****
 
+# Wordle AI Solver & Tutor — Heuristic and Data-Driven Search Agent  
+This project implements an intelligent Wordle-solving agent capable of both full autonomous play and real time tutoring for human players playing wordle on their devices.  
+The system combines concepts from state-space search, informed heuristics, and probabilistic reasoning to efficiently solve the official Wordle puzzle set (2,315 accepted answers).  
+Built on top of an extended open-source solver (cited below), this project introduces:  
+* Explicit informed search heuristics (entropy hueristic/expected candidate reduction, A*-style evaluation)  
+* Bayesian belief-state updates  
+* A unified strategy interface  
+* A complete simulation pipeline for evaluating solver performance  
+* An interactive GUI Tutor and an Auto Solve GUI  
+* A full CLI framework for running experiments, running simulations, and generating analysis data  
+The goal is to design an agent that solves Wordle with maximum efficiency — minimizing average guess count while keeping failures near zero.
+# Features:  
+### Multiple AI Stragies were implemented in order to seek a more efficient solution  
+* BaselineFrequencyStrategy:  inherited from original repo- ositional letter-frequency heuristic  
+* EntropyHeuristicStrategy: informed search heuristic maximizing information gain  
+* BayesianBeliefStrategy: maintains explicit P(word | evidence)
+* AStarEvaluationStrategy — A*-style f(n)=g(n)+h(n) over belief states
+### Three Modes of Use  
+* Autonomous Simulation Mode  
+Runs all 2,315 official answers, outputs stats, CSV for modeling, and plots
+*  Interactive Tutor Mode (CLI or GUI)  
+Allows user to play Wordle yourself and let the agent recommend optimal guesses.
+*  AutoSolve (GUI)
+Ability to map the steps of applied strategy to a target word.
+### Full Analytics Pipeline  
+experiment_runner.py generates:  
+* Mean guesses
+* Failure counts
+* Distribution histograms (guess distributions)
+* Txt summaries
+* CSV logs for modeling (google colab notebook)
+Inspired by baseline/open-source repo
+### Modular Architecture  
+* Strategies interchange easily  
+* Belief state updates centralized in solver  
+* Separate CLI and GUI layers  
+* Clean state space abstraction (states, actions, transitions, goal)
+# Repository Structure (Core Files)  
+```
+/strategies.py         — All strategy classes. Our engine (baseline, entropy-hueristic, bayes, A*)
+/wordle_solver.py      — Original solver engine (feedback logic, dictionary)
+/puzzle.py             — Core Wordle constraint model
+/wordle_agent.py       — Autonomous agent wrapper
+/experiment_runner.py  — Simulation engine (ability to view simulated runs via command line) + CSV output
+/tutorCli.py           — CLI tutor for real Wordle players
+/ui/                   — Tkinter GUI implementation, wrapped around our revamped engine
+    uiController.py
+    wordleView.py
+    wordleGameApp.py
+```
+# How it Works  
+### State Representation    
+* Each world state = set of candidate words consistent with feedback  
+* Feedback (green/yellow/gray) prunes states  
+* Strategies choose actions over this evolving belief state    
+### Goal  
+Solve the hidden Wordle word in the fewest expected guesses, lowest guess average.    
+### Why Entropy as our default strategy?  
+Entropy scoring partitions the belief state by feedback pattern and chooses the guess that maximizes expected information gain, yielding highly efficient reductions.  
+
+# Example output (of simulation)   
+```
+Strategy: entropy
+Mean guesses: 3.62
+Solved within 4 guesses: 93%
+Failures ( >6 guesses ): 8 / 2315
+```
+# Findings:  
+* Entropy heuristic produced the lowest average guess count.  
+* Bayesian and A* methods showed stable, consistent reasoning from belief states.    
+* Baseline frequency heuristic performed well but was outperformed in deep uncertainty cases. Still a safe option, but we believe our heuristic is more efficient.     
+* Combining heuristics with data driven inference yields a meaningfully more efficient solver.      
+ 
 # Running our Wordle AI System:
 
 This project extends the original Wordle solver (cited down below) with a modular AI strategy layer (Baseline, Entropy, Bayesian, A*) and provides two ways to use the system:
@@ -132,12 +204,7 @@ Our contribution consists of an AI Strategy Layer built on top of the existing s
 
 This extension is intended for academic use as part of a university AI course project.
 
-(Citations for report later:
-
-We extend the open-source Wordle solver by Stephenson (2022), available at https://github.com/joshstephenson/Wordle-Solver 
-
-OR for the reference page: 
-
-Stephenson, J. (2022). *Wordle-Solver* [Source code]. GitHub.  
-https://github.com/joshstephenson/Wordle-Solver )
+## Additonal References-    
+* Russell & Norvig. Artificial Intelligence: A Modern Approach (4th ed.)  
+* Panangadan, A. CPSC 481 AI Lecture Slides (2025)  
 
