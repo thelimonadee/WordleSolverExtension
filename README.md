@@ -1,5 +1,5 @@
 # WordleSolverExtension
-For CPSC481 AI Project  
+For CPSC481 AI Project - Michael Joseph Lim  
 
 # Wordle AI Solver & Tutor — Heuristic and Data-Driven Search Agent  
 This project implements an intelligent Wordle-solving agent capable of both full autonomous play and real time tutoring for human players playing wordle on their devices.  
