@@ -1,8 +1,7 @@
 # WordleSolverExtension
 For CPSC481 AI Project - Michael Joseph Lim  
 
-# Wordle AI Solver & Tutor  
-## -Heuristic and Data-Driven Search Agent    
+# Wordle AI Solver & Tutor - Heuristic and Data-Driven Search Agent    
 This project implements an intelligent Wordle-solving agent capable of both full autonomous play and real time tutoring for human players playing wordle on their devices.  
 The system combines concepts from state-space search, informed heuristics, and probabilistic reasoning to efficiently solve the official Wordle puzzle set (2,315 accepted answers).  
 Built on top of an extended open-source solver (cited below), this project introduces:  
