@@ -1,5 +1,5 @@
 # WordleSolverExtension
-For CSUF CPSC481 AI Project - Michael Joseph Lim  
+CSUF CPSC481 AI Project - Michael Joseph Lim  
 
 
 # Wordle AI Solver & Tutor - Heuristic and Data-Driven Search Agent    
